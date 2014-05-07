@@ -8,4 +8,4 @@ import Data.String (String)
 main :: IO ()
 main = do
    args <- getArgs
-   putStrLn (foldl (\acc x -> acc ++ " " ++ x) "Hello" args)
+   putStrLn (show (foldl (\acc x -> acc + (read x)) 0 args))
