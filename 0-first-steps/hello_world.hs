@@ -8,10 +8,4 @@ import Data.String (String)
 main :: IO ()
 main = do
    args <- getArgs
-   putStrLn ("Hello, " ++ (elemOrEmpty 0 args) ++ " " ++ (elemOrEmpty 1 args))
-
-
-elemOrEmpty :: Int -> [String] -> String
-elemOrEmpty i xs
-  | i < length xs = xs !! i
-  | otherwise     = ""
+   putStrLn (foldl (\acc x -> acc ++ " " ++ x) "Hello" args)
